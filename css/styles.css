@@ -1,0 +1,237 @@
+/* Corey's Todo App CSS-----------------------------------------------
+
+Section 01 - Basic Global Styles
+Section 02 - home page
+Section 03 - todo page
+Section 04 - register page
+Section 05 - header
+--------------------------------------------------------------------*/
+
+/* 
+Section 01 --------------------------------------------------------*/
+
+html {
+    --myBackground: rgba(204, 200, 190, 0.7);
+    --myHeaderColor: #130f0c;
+    --myHeaderFont: #3d270e;
+    --myFont: #645f58;
+    --myPDFcolor: #525659;
+    --myShadow: 0 5px 5px rgba(104, 104, 104, 0.8);
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px 50px;
+    background-color: var(--myBackground);
+    color: var(--myFont);
+}
+
+.headers {
+    text-align: center;
+    color: var(--myHeaderFont);
+    padding: 15px;
+}
+
+.submit:hover {
+     background: grey;
+     color: white;
+}
+/* 
+Section 02 Home
+-------------------------------------------------------------------*/
+.home-container {
+    display: grid;
+    grid-gap: 10px;
+    color: var(--myFont);
+}
+
+.register {
+    padding: 15px;
+    text-align: center;
+}
+.registerLink a {
+    color: var(--myFont);
+    text-decoration: none;
+}
+
+.registerLink a:hover {
+    color: rgb(58, 57, 28);
+}
+
+.loginForm input, label {
+    border: 15px;
+    color: var(--myFont);
+    margin: 15px;
+    padding: 5px;
+    width: 100%;
+}
+
+/* 
+Section 03 Todo
+-------------------------------------------------------------------*/
+.todo li{
+    color: var(--myFont);
+    list-style: none;
+    
+}
+
+.newTodoItems {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 5px;
+   
+}
+
+.todo-list input, label, button {
+    border: 15px;
+    color: var(--myFont);
+    margin: 15px;
+    padding: 5px;
+    width: 100%;
+}
+
+.todo button:hover {
+    background: grey;
+    color: white;
+}
+
+.submit:hover {
+    background: grey;
+    color: white;
+}
+
+.list-0-items {
+     
+     color:var(--myFont);
+     text-align: center;
+}
+
+.list-1-items {
+    color: var(--myFont);
+    text-align: center;
+    text-decoration: line-through;
+}
+
+.list-2-items {
+    display: none;
+}
+
+.mark-0-complete {
+    color: var(--myFont);
+    float: right;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.edit-0-todo {
+    color: var(--myFont);
+    float: right;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.mark-0-complete:hover,
+.edit-0-todo:hover {
+    background: grey;
+    color: white;
+}
+
+.mark-1-complete,
+.mark-2-complete,
+.delete-2-todo,
+.edit-1-todo,
+.edit-2-todo {
+    display: none;
+}
+ 
+.delete-0-todo, 
+.delete-1-todo {
+    color: var(--myFont);
+    float: right;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.delete-0-todo:hover,
+.delete-1-todo:hover {
+    background: grey;
+    color: white;
+}
+
+.archived-1-items,
+.archived-1-button {
+  display: none;
+}
+
+.archived-0-button {
+    color: var(--myFont);
+    float: right;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.archived-0-button:hover {
+    background: grey;
+    color: white;
+}
+
+/* 
+Section 04 Register
+------------------------------------------------------------------*/
+.register-container {
+    display: grid;
+    color: var(--myFont);
+}
+
+.registerForm input, label {
+     border: 15px;
+     color: var(--myFont);
+     margin: 15px;
+     padding: 5px;
+     width: 100%;
+}
+
+/*
+Section 05 Header
+------------------------------------------------------------------*/
+.app-header {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    grid-gap: 5px;
+    background-color: var(--myBackground);
+    color: var(--myFont);
+    padding: 10px;
+    border-radius:50%;
+    height: 50px;
+}
+
+.app-logo {
+    background-color: var(--myFont);
+    color: var(--myBackground);
+    border-radius: 50%;
+    text-align: center;
+}
+
+.home-button {
+    padding: 10px;
+}
+
+.home-button button{
+    height: 50px;
+    margin: 10px;
+    border: 10px;
+    border-radius:70%;
+    background-color: var(--myFont);
+    color: var(--myBackground);
+}
+
+.home-button button:hover {
+    background-color: var(--myFont);
+    color: var(--myHeaderColor);
+}
+
