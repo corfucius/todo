@@ -2,10 +2,9 @@
     include'database.php';
     include'classes.php';
     $conn = new mysqli("localhost", "root", "", "todolist");
-    if (isset($_POST["submit"]) ) {
-        $username = strip_tags(trim( $_POST['username']));
-        
-        $email = strip_tags(trim( $_POST['email']));
+    if (isset($_POST["submit"])) {
+        $username = strip_tags(trim($_POST['username']));
+        $email = strip_tags(trim($_POST['email']));
         $password = $_POST['password'];
         $password_encrypted = md5($password);
         //check fields for errors

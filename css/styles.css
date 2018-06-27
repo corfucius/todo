@@ -5,6 +5,7 @@ Section 02 - home page
 Section 03 - todo page
 Section 04 - register page
 Section 05 - header
+Section 06 - archive
 --------------------------------------------------------------------*/
 
 /* 
@@ -235,3 +236,8 @@ Section 05 Header
     color: var(--myHeaderColor);
 }
 
+/*Secionn 06 - archive
+---------------------------------------------------------------*/
+.archiveArea {
+    text-align: left;
+}

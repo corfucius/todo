@@ -7,7 +7,6 @@ session_start();
 $user_id = $_SESSION['user_id'];
 $name =  $_SESSION["username"];  
 
-
     if(isset($_GET['as'], $_GET['item'])) {
         $as = $_GET['as'];
         $id = $_GET['item'];
@@ -15,7 +14,7 @@ $name =  $_SESSION["username"];
         echo $id;
     }
      if(isset($_POST['save_change'])) { 
-        $edit_todo = strip_tags(trim( $_POST['edit_todo']));
+        $edit_todo = $_POST['edit_todo'];
         $id = $_GET['item'];
         $save_result = $conn->query("UPDATE todos SET todo_item = '$edit_todo' WHERE id = '$id'");
         header('location:todo.php');
