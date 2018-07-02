@@ -8,9 +8,7 @@ class User {
     private $errors;
 
     function __construct (){
-
         $this->db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
     }
 
     public function create($username, $password, $email) {
