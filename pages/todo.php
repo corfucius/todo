@@ -13,7 +13,7 @@ $todo_page_id = $_SESSION['user_id'];
 //when submit is clicked
 if (isset($_POST["submit"]) ) {
     $newItem = $_POST['newItem'];
-    //verfiy handle on session id
+    //verify handle on session id
     echo "$todo_page_id";
     //add users todo to db
     $add_user_todo = $db->query('INSERT INTO todos (user_id, todo_item, todo_date) VALUES("'.$todo_page_id.'", "'.$newItem.'", NOW())');
@@ -49,7 +49,7 @@ if(isset($_POST['logout'])) {
         //then output data for each row
         while($row = $todo_result->fetch_assoc()) { ?>
             <li class="todoArea">
-                <!--let the css classes do the work of marking complete and deleting by echoing a variable that represents different states for the todo item   -->
+                <!--let the css do the work of marking complete and deleting by using PHP to echo a variable that represents different states for the todo item   -->
                 <span class="list-<?php echo $row['todo_status'];?>-items">
                 <?php echo $row["todo_item"].'<br> '.$row["todo_date"];?>
                 </span>
@@ -93,5 +93,5 @@ if(isset($_POST['logout'])) {
     </form>
 </div>
 </body>
-<?php include'../includes/footer.php';?>
+
 </html>

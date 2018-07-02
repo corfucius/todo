@@ -43,5 +43,5 @@ $name =  $_SESSION["username"];
     </form>
 </div>
 </body>
-<?php include'../includes/footer.php';?>
+
 </html>

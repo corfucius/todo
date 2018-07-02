@@ -2,13 +2,6 @@
 include'config.php';
 
 
-class todos {
-    private $db;
-    function __construct (){
-    $this->db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    }
-}
-
 class User {
 
     private $db;
