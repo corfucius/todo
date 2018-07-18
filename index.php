@@ -1,15 +1,16 @@
 <?php
     include'database.php';
     include'classes.php';
-    $conn = new mysqli("localhost", "root", "", "todolist");
+
+    //$conn = new mysqli("localhost", "root", "", "todolist");
     if (isset($_POST["submit"])) {
-        $username = strip_tags(trim($_POST['username']));
-        $email = strip_tags(trim($_POST['email']));
-        $password = $_POST['password'];
+        $username = strip_tags(trim($_POST["username"]));
+        $email = strip_tags(trim($_POST["email"]));
+        $password = $_POST["password"];
         $password_encrypted = md5($password);
         //check fields for errors
         $users = new User();
-        if($users->check_for_login_errors($username, $email, $password) == true) {
+        if($users->check_for_login_errors($username, $email, $password) == true){
         $result = $conn->query("SELECT * FROM users WHERE username = '$username' AND password = '$password_encrypted'");
         ///create var for id and assign to session for later use
         $get_id = $conn->query("SELECT id FROM users WHERE username = '$username'");
@@ -21,13 +22,13 @@
             $_SESSION["email"] = $email;
             $_SESSION["password"] = $password;
             $_SESSION["logged_in"] = 1;
-            $_SESSION['user_id'] = $ids['id'];
-            $id = $_SESSION['user_id'];
+            $_SESSION["user_id"] = $ids["id"];
+            $id = $_SESSION["user_id"];
             //if everything checks out, send them to their todolist
-            header('location:pages/todo.php');
+            header("location:pages/todo.php");
             exit(); 
         } else {
-            echo 'The information provided does not match any users in our system, please register below.';
+            echo "The information provided does not match any users in our system, please register below.";
         }
       }
     }

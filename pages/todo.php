@@ -6,7 +6,7 @@
 <?php
 session_start();
 //initialize db set session vars
-$db = new mysqli("localhost", "root", "", "todolist");
+//$db = new mysqli("localhost", "root", "", "todolist");
 //these two vars are carried over from login page
 $name =  $_SESSION["username"];  
 $todo_page_id = $_SESSION['user_id'];
@@ -16,7 +16,7 @@ if (isset($_POST["submit"]) ) {
     //verify handle on session id
     echo "$todo_page_id";
     //add users todo to db
-    $add_user_todo = $db->query('INSERT INTO todos (user_id, todo_item, todo_date) VALUES("'.$todo_page_id.'", "'.$newItem.'", NOW())');
+    $add_user_todo = $conn->query('INSERT INTO todos (user_id, todo_item, todo_date) VALUES("'.$todo_page_id.'", "'.$newItem.'", NOW())');
     }
 //logout end session
 if(isset($_POST['logout'])) {
@@ -43,7 +43,7 @@ if(isset($_POST['logout'])) {
         <?php
         //if name carried over in session
         if(isset($name)) {
-        $todo_result = $db->query("SELECT * FROM todos WHERE user_id = '$todo_page_id'");
+        $todo_result = $conn->query("SELECT * FROM todos WHERE user_id = '$todo_page_id'");
         //if query returns a value
         if($todo_result->num_rows > 0) {
         //then output data for each row
@@ -67,7 +67,7 @@ if(isset($_POST['logout'])) {
         // if archive button clicked
         if(isset($_POST['archive'])) { 
         // select all for the current user
-        $todo_result = $db->query("SELECT * FROM todos WHERE user_id = '$todo_page_id'");?>
+        $todo_result = $conn->query("SELECT * FROM todos WHERE user_id = '$todo_page_id'");?>
         <ul class="archived-<?php echo $row['archive_status'];?>-items">
         <?php
         //if query returns a value then do this stuff
@@ -76,7 +76,10 @@ if(isset($_POST['logout'])) {
         while($row = $todo_result->fetch_assoc()) { ?>
             <li class="archiveArea">
                 <span class="archive list">
-                    <?php echo $row["todo_item"].' '.$row["todo_date"];?>
+                    <?php echo $row["todo_item"];?>
+                </span><br/>
+                <span class="archive list">
+                    <?php echo $row["todo_date"];?>
                 </span>
             </li>
         </ul>

@@ -207,14 +207,14 @@ Section 05 Header
     background-color: var(--myBackground);
     color: var(--myFont);
     padding: 10px;
-    border-radius:50%;
+    border-radius:20%;
     height: 50px;
 }
 
 .app-logo {
     background-color: var(--myFont);
     color: var(--myBackground);
-    border-radius: 50%;
+    border-radius: 20%;
     text-align: center;
 }
 
