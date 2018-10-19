@@ -1,7 +1,7 @@
 # todo
 php todo app project 
 
-This is a project with which I am challenging myself in an effort to learn more about php, oop and mvc. The focus is on learning how to move my functions, queries etc over to the classes, creating cleaner more reusable, secure code.  The basic functionality was built-in first, and I will be revisiting the code to refactor as time goes on.
+This is a project I was assiged as an intern. I used it to learn more about php, oop and mvc. The focus was on learning how to move my functions, queries etc over to the classes, creating cleaner more reusable, secure code.
 The currently has these features:<br/>
 Create User <br/>
 Login<br/>
