@@ -14,7 +14,7 @@ $todo_page_id = $_SESSION['user_id'];
 if (isset($_POST["submit"]) ) {
     $newItem = $_POST['newItem'];
     //verify handle on session id
-    echo "$todo_page_id";
+    //echo "$todo_page_id";
     //add users todo to db
     $add_user_todo = $conn->query('INSERT INTO todos (user_id, todo_item, todo_date) VALUES("'.$todo_page_id.'", "'.$newItem.'", NOW())');
     }
